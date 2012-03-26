@@ -38,35 +38,35 @@ And numpy: http://sourceforge.net/projects/numpy/files/NumPy/1.5.1/numpy-1.5.1-w
 Basic Usage
 ============
 
-    ```python
-    return_vector = numpy.matrix((0.05, 0.07, 0.15, 0.27)).T
-    stddev_vector = numpy.matrix((0.07, 0.12, 0.30, 0.60)).T
-    correlation_matrix = numpy.matrix(((1.0, 0.8, 0.5, 0.4),
-                                       (0.8, 1.0, 0.7, 0.5),
-                                       (0.5, 0.7, 1.0, 0.8),
-                                       (0.4, 0.5, 0.8, 1.0)))
+```python
+return_vector = numpy.matrix((0.05, 0.07, 0.15, 0.27)).T
+stddev_vector = numpy.matrix((0.07, 0.12, 0.30, 0.60)).T
+correlation_matrix = numpy.matrix(((1.0, 0.8, 0.5, 0.4),
+                                   (0.8, 1.0, 0.7, 0.5),
+                                   (0.5, 0.7, 1.0, 0.8),
+                                   (0.4, 0.5, 0.8, 1.0)))
 
-    target_return = .125
-    allocations, stddev = calc_min_variance_portfolio(return_vector, stddev_vector, 
-                                correlation_matrix, target_return)
-    print "scenario 1 - optimize portfolio for target return"
-    print "target return: %.2f%%" % (target_return * 100.0)
-    print "min variance portfolio:"
-    print allocations
-    print "portfolio std deviation: %.2f%%" % (stddev * 100.0)
+target_return = .125
+allocations, stddev = calc_min_variance_portfolio(return_vector, stddev_vector, 
+                            correlation_matrix, target_return)
+print "scenario 1 - optimize portfolio for target return"
+print "target return: %.2f%%" % (target_return * 100.0)
+print "min variance portfolio:"
+print allocations
+print "portfolio std deviation: %.2f%%" % (stddev * 100.0)
 
-    print "-" * 40
-    
-    target_variance = .15
-    allocations, stddev, rtn = calc_max_return_portfolio(return_vector, stddev_vector, 
-                                                         correlation_matrix, target_variance)
-    print "scenario 2 - optimize portfolio for target variance"
-    print "target variance: %.2f%%" % (target_variance * 100.0)
-    print "max return:"
-    print allocations
-    print "portfolio std deviation: %.2f%%" % (stddev * 100.0)
-    print "portfolio return: %.2f%%" % (rtn * 100.0)
-    ```
+print "-" * 40
+
+target_variance = .15
+allocations, stddev, rtn = calc_max_return_portfolio(return_vector, stddev_vector, 
+                                                     correlation_matrix, target_variance)
+print "scenario 2 - optimize portfolio for target variance"
+print "target variance: %.2f%%" % (target_variance * 100.0)
+print "max return:"
+print allocations
+print "portfolio std deviation: %.2f%%" % (stddev * 100.0)
+print "portfolio return: %.2f%%" % (rtn * 100.0)
+```
 																																		          
 
 License
